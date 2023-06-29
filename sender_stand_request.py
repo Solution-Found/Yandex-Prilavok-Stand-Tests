@@ -3,13 +3,13 @@ import configuration
 import data
 
 
-# Эндпоинт создания нового пользователя
+# Функция запроса на создание нового пользователя
 def post_new_user(test_body):
-    return requests.post(configuration.URL_SERVICE + configuration.CREATE_USER_PATH,  # подставляем полный url
-                         headers=data.headers,  # здесь заголовки
-                         json=test_body)  # здесь тело
+    # Составление URL запроса
+    return requests.post(configuration.URL_SERVICE + configuration.CREATE_USER_PATH, headers=data.headers, json=test_body)
 
 
-# Эндпоинт получения информации из таблицы БД
+# Функция запроса на получение информации из таблицы БД
 def get_users_table():
-    return requests.get(configuration.URL_SERVICE + configuration.USERS_TABLE_PATH)  # подставляем полный url
+    # Составление URL запроса
+    return requests.get(configuration.URL_SERVICE + configuration.USERS_TABLE_PATH)
